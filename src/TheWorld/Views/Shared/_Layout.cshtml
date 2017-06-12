@@ -3,16 +3,19 @@
 <head>
     <title>The World - @ViewBag.Title</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="css/site.css" />
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
 </head>
 <body>
     <div id="sidebar">
-        <img src="img/andrew.png" alt="headshot" class="headshot" />
+        <img src="~/img/andrew.png" alt="headshot" class="headshot" />
         <span id="username">Andrew Perry</span>
         <ul class="menu">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="active"><a asp-controer="App" asp-action="Index">Home</a></li>
+            <li><a asp-controer="App" asp-action="About">About</a></li>
+            <li><a asp-controer="App" asp-action="Contact">Contact</a></li>
         </ul>
     </div>
 
@@ -28,7 +31,9 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="lib/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="script/site.js"></script>
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    @RenderSection("scripts", false)
+    <script type="text/javascript" src="~/script/site.js"></script>
 </body>
 </html>
